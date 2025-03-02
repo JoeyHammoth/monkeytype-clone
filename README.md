@@ -2,7 +2,7 @@
 ![Type-O Screenshot](./logo.png)
 
 Type-O is a fun, fast-paced monkey-type/typeracer clone built with React. It challenges you to test your typing speed and accuracy by dynamically displaying words and allowing you to set your own challenge parameters.
-
+The final product can be found [here](https://joeyhammoth.github.io/monkeytype-clone/).
 ## Features
 
 - **Real-time Typing Challenge:** Type words as they appear on the screen.
