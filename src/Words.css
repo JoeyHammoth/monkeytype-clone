@@ -1,0 +1,57 @@
+:root {
+    --font-family: "Inter";
+    --main-font-size: 3vw;
+    --general-padding: 32px;
+    --general-gap: 16px;
+}
+
+.word-container {
+    font-family: var(--font-family), sans-serif;
+    padding: var(--general-padding);
+}
+
+h2 {
+    font-size: var(--main-font-size);
+}
+
+.input-section {
+    display: flex;
+    gap: var(--general-gap);
+    padding-top: var(--general-gap);
+    padding-bottom: var(--general-gap);
+}
+
+.input-num, .btn-submit, .type-input {
+    border: 5px solid black;
+    border-radius: 16px;
+    padding: var(--general-gap);
+}
+
+.type-input {
+    transition: border-color 0.5s;
+}
+
+.btn-submit:hover {
+    background-color: lightgray;
+}
+
+.btn-submit:active {
+    background-color: grey;
+}
+
+.input-words {
+    display: flex;
+    flex-direction: column;
+    gap: var(--general-gap);
+    padding-top: var(--general-gap);
+    padding-bottom: var(--general-gap);
+}
+
+.warning {
+    color: red;
+    display: none;
+}
+
+.score {
+    font-size: var(--main-font-size);
+}

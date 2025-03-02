@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Words.css";
 
 const URL_GET_WORDS = "https://random-word-api.vercel.app/api?words=";
 
@@ -9,6 +10,7 @@ const Words = function () {
         const promise = await fetch(URL_GET_WORDS + num);
         const processed = await promise.json();
         setWordList(processed);
+        updateScore(num);
     }
 
     function updateScore(num) {
@@ -22,9 +24,13 @@ const Words = function () {
     }, []);
 
     function changeWords() {
+        const warningDisplay = document.querySelector(".warning");
+        const currInput = document.querySelector(".type-input");
         const input = document.querySelector(".input-num");
         fetchWords(input.value);
         updateScore(wordList.length);
+        warningDisplay.style.display = "none";
+        currInput.style.borderColor = "black";
     }
 
     function removeWord() {
@@ -36,8 +42,15 @@ const Words = function () {
             wordDisplay.innerText = wordList.join(" ");
             currInput.value = "";
             updateScore(wordList.length);
+            warningDisplay.style.display = "none";
+            currInput.style.borderColor = "black";
         } else {
             warningDisplay.style.display = "block";
+            currInput.style.borderColor = "red";
+        }
+
+        if (wordList.length === 0) {
+            wordDisplay.innerText = "Congratulations!";
         }
     }
 
