@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import Words from "./Words.jsx";
+import "./App.css";
+import Copyright from "./Copyright.jsx";
 
 const App = function () {
     return (
@@ -8,6 +10,7 @@ const App = function () {
             <div>
                 <h1>Type-O</h1>
                 <Words />
+                <Copyright />
             </div>
         </StrictMode>
     );
